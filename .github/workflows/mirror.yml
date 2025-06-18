@@ -45,6 +45,8 @@ jobs:
             cp "$file" ".github/workflows/${TARGET_DIR}_${filename}"
           done
 
+          rm -rf $TARGET_DIR/workflows
+
           git add .
           git commit -m "Mirror $TARGET_DIR on ${{ github.sha }}" || echo "No changes"
           git push
