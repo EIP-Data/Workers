@@ -31,7 +31,8 @@ jobs:
           rsync -av --delete \
           --exclude '.git' \
           --exclude 'Datalyz' \
-          --exclude '.github/workflows/mirroring.yml' \
+          --exclude '.github/' \
+          --exclude '.github/workflows/mirror.yml' \
           ${{ github.workspace }}/ $TARGET_DIR/
 
           mkdir -p .github/workflows
