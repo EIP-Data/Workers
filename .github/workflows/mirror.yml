@@ -17,12 +17,12 @@ jobs:
           mkdir -p workflows
           cp -r .github/workflows/*.yml workflows/
 
-      - name: Push to tea repo
+      - name: Push to Datalyz repo
         run: |
           git config --global user.email "datalyz-mirror-bot@example.com"
           git config --global user.name "DATALYZ Mirror Bot"
 
-          git clone https://x-access-token:${{ secrets.TEA_TOKEN }}@github.com/EIP-Data/Datalyz.git
+          git clone https://x-access-token:${{ secrets.CYP_CI_MIRROR_KEY }}@github.com/EIP-Data/Datalyz.git
           cd Datalyz
 
           TARGET_DIR="workers"
