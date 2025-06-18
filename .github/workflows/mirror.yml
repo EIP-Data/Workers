@@ -34,6 +34,9 @@ jobs:
 
           for file in ${{ github.workspace }}/workflows/*.yml; do
             filename=$(basename "$file")
+            if [ "$filename" = "mirror.yml" ]; then
+              continue
+            fi
             cp "$file" ".github/workflows/${TARGET_DIR}_${filename}"
           done
 
