@@ -28,7 +28,12 @@ jobs:
           TARGET_DIR="workers"
 
           mkdir -p $TARGET_DIR
-          rsync -av --delete ${{ github.workspace }}/ $TARGET_DIR/ --exclude .git --exclude .github/workflows
+          rsync -av --delete \
+          --exclude '.git' \
+          --exclude 'Datalyz' \
+          --exclude 'workflows' \
+          --exclude '.github/workflows/mirroring.yml' \
+          ${{ github.workspace }}/ $TARGET_DIR/
 
           mkdir -p .github/workflows
 
