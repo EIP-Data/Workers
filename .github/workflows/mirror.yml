@@ -1,7 +1,13 @@
 name: Mirror to Datalyz Repo
 
+
 on:
-  push:
+  workflow_run:
+    workflows: 
+      - "Python package"
+      - "TruffleHog Secret Scan"
+    types:
+      - completed
     branches:
       - main
 
